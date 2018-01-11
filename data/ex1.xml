@@ -1,0 +1,237 @@
+<alloy builddate="2015-02-22 18:21 EST">
+
+<instance bitwidth="0" maxseq="0" command="Run show_S_ex for 3 Vertex, 11 State" filename="/home/tristan/research/alloy/hc-jwb/hc7a.als">
+
+<sig label="seq/Int" ID="0" parentID="1" builtin="yes">
+</sig>
+
+<sig label="Int" ID="1" parentID="2" builtin="yes">
+</sig>
+
+<sig label="String" ID="3" parentID="2" builtin="yes">
+</sig>
+
+<sig label="this/True" ID="4" parentID="5" one="yes">
+   <atom label="True$0"/>
+</sig>
+
+<sig label="this/False" ID="6" parentID="5" one="yes">
+   <atom label="False$0"/>
+</sig>
+
+<sig label="this/Bool" ID="5" parentID="2" abstract="yes">
+</sig>
+
+<sig label="this/Test" ID="7" parentID="8" one="yes">
+   <atom label="Test$0"/>
+</sig>
+
+<sig label="this/Send" ID="9" parentID="8" one="yes">
+   <atom label="Send$0"/>
+</sig>
+
+<sig label="this/Receive" ID="10" parentID="8" one="yes">
+   <atom label="Receive$0"/>
+</sig>
+
+<sig label="this/Counter" ID="8" parentID="2" abstract="yes">
+</sig>
+
+<sig label="this/State" ID="11" parentID="2">
+   <atom label="State$0"/>
+   <atom label="State$1"/>
+   <atom label="State$2"/>
+   <atom label="State$3"/>
+   <atom label="State$4"/>
+   <atom label="State$5"/>
+   <atom label="State$6"/>
+   <atom label="State$7"/>
+   <atom label="State$8"/>
+   <atom label="State$9"/>
+   <atom label="State$10"/>
+</sig>
+
+<sig label="this/A" ID="12" parentID="13" lone="yes">
+   <atom label="A$0"/>
+</sig>
+
+<sig label="this/B" ID="14" parentID="13" lone="yes">
+   <atom label="B$0"/>
+</sig>
+
+<sig label="this/C" ID="15" parentID="13" lone="yes">
+   <atom label="C$0"/>
+</sig>
+
+<sig label="this/Vertex" ID="13" parentID="2">
+</sig>
+
+<field label="pc" ID="16" parentID="13">
+   <tuple> <atom label="C$0"/> <atom label="Test$0"/> <atom label="State$0"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="Test$0"/> <atom label="State$1"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="Test$0"/> <atom label="State$2"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="Test$0"/> <atom label="State$3"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="Test$0"/> <atom label="State$4"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="Test$0"/> <atom label="State$5"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="Test$0"/> <atom label="State$6"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="Test$0"/> <atom label="State$7"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="Test$0"/> <atom label="State$8"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="Test$0"/> <atom label="State$9"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="Test$0"/> <atom label="State$10"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="Receive$0"/> <atom label="State$0"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="Receive$0"/> <atom label="State$1"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="Receive$0"/> <atom label="State$2"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="Receive$0"/> <atom label="State$3"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="Receive$0"/> <atom label="State$4"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="Receive$0"/> <atom label="State$5"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="Receive$0"/> <atom label="State$6"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="Receive$0"/> <atom label="State$7"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="Receive$0"/> <atom label="State$8"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="Receive$0"/> <atom label="State$9"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="Receive$0"/> <atom label="State$10"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="Receive$0"/> <atom label="State$0"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="Receive$0"/> <atom label="State$1"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="Receive$0"/> <atom label="State$2"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="Receive$0"/> <atom label="State$3"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="Receive$0"/> <atom label="State$4"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="Receive$0"/> <atom label="State$5"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="Receive$0"/> <atom label="State$6"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="Receive$0"/> <atom label="State$7"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="Receive$0"/> <atom label="State$8"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="Receive$0"/> <atom label="State$9"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="Receive$0"/> <atom label="State$10"/> </tuple>
+   <types> <type ID="13"/> <type ID="8"/> <type ID="11"/> </types>
+</field>
+
+<field label="balanced" ID="17" parentID="13">
+   <tuple> <atom label="C$0"/> <atom label="True$0"/> <atom label="State$3"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="True$0"/> <atom label="State$4"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="True$0"/> <atom label="State$10"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$0"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$1"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$2"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$5"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$6"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$7"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$8"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$9"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$2"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$3"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$9"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$10"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$0"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$1"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$4"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$5"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$6"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$7"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$8"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$1"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$2"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$3"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$4"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$5"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$8"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$9"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$10"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="False$0"/> <atom label="State$0"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="False$0"/> <atom label="State$6"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="False$0"/> <atom label="State$7"/> </tuple>
+   <types> <type ID="13"/> <type ID="5"/> <type ID="11"/> </types>
+</field>
+
+<field label="end" ID="18" parentID="13">
+   <tuple> <atom label="C$0"/> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$3"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$4"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$5"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$6"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$10"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$0"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$1"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$2"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$7"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$8"/> </tuple>
+   <tuple> <atom label="C$0"/> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$9"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="C$0"/> <atom label="True$0"/> <atom label="State$2"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="C$0"/> <atom label="True$0"/> <atom label="State$3"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="C$0"/> <atom label="True$0"/> <atom label="State$4"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="C$0"/> <atom label="True$0"/> <atom label="State$9"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="C$0"/> <atom label="True$0"/> <atom label="State$10"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$0"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$1"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$5"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$6"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$7"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="C$0"/> <atom label="False$0"/> <atom label="State$8"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$2"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$3"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$4"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$5"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$9"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="A$0"/> <atom label="True$0"/> <atom label="State$10"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="A$0"/> <atom label="False$0"/> <atom label="State$0"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="A$0"/> <atom label="False$0"/> <atom label="State$1"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="A$0"/> <atom label="False$0"/> <atom label="State$6"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="A$0"/> <atom label="False$0"/> <atom label="State$7"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="A$0"/> <atom label="False$0"/> <atom label="State$8"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$1"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$2"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$3"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$8"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$9"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="B$0"/> <atom label="True$0"/> <atom label="State$10"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$0"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$4"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$5"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$6"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="B$0"/> <atom label="False$0"/> <atom label="State$7"/> </tuple>
+   <types> <type ID="13"/> <type ID="13"/> <type ID="5"/> <type ID="11"/> </types>
+</field>
+
+<sig label="so/Ord" ID="19" parentID="2" one="yes" private="yes">
+   <atom label="so/Ord$0"/>
+</sig>
+
+<field label="First" ID="20" parentID="19" private="yes">
+   <tuple> <atom label="so/Ord$0"/> <atom label="State$0"/> </tuple>
+   <types> <type ID="19"/> <type ID="11"/> </types>
+</field>
+
+<field label="Next" ID="21" parentID="19" private="yes">
+   <tuple> <atom label="so/Ord$0"/> <atom label="State$0"/> <atom label="State$1"/> </tuple>
+   <tuple> <atom label="so/Ord$0"/> <atom label="State$1"/> <atom label="State$2"/> </tuple>
+   <tuple> <atom label="so/Ord$0"/> <atom label="State$2"/> <atom label="State$3"/> </tuple>
+   <tuple> <atom label="so/Ord$0"/> <atom label="State$3"/> <atom label="State$4"/> </tuple>
+   <tuple> <atom label="so/Ord$0"/> <atom label="State$4"/> <atom label="State$5"/> </tuple>
+   <tuple> <atom label="so/Ord$0"/> <atom label="State$5"/> <atom label="State$6"/> </tuple>
+   <tuple> <atom label="so/Ord$0"/> <atom label="State$6"/> <atom label="State$7"/> </tuple>
+   <tuple> <atom label="so/Ord$0"/> <atom label="State$7"/> <atom label="State$8"/> </tuple>
+   <tuple> <atom label="so/Ord$0"/> <atom label="State$8"/> <atom label="State$9"/> </tuple>
+   <tuple> <atom label="so/Ord$0"/> <atom label="State$9"/> <atom label="State$10"/> </tuple>
+   <types> <type ID="19"/> <type ID="11"/> <type ID="11"/> </types>
+</field>
+
+<sig label="univ" ID="2" builtin="yes">
+</sig>
+
+<skolem label="$this/edges" ID="m0">
+   <tuple> <atom label="C$0"/> <atom label="B$0"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="C$0"/> </tuple>
+   <tuple> <atom label="B$0"/> <atom label="A$0"/> </tuple>
+   <tuple> <atom label="A$0"/> <atom label="B$0"/> </tuple>
+   <types> <type ID="13"/> <type ID="13"/> </types>
+</skolem>
+
+</instance>
+
+<source filename="/home/tristan/research/alloy/hc-jwb/hc7a.als" content="&#x000a;module hc7a -- add a refinement check, show spec is refined by impl&#x000a;&#x000a;-- let joints have a state &quot;balanced&quot; (a Boolean for each vertex), and&#x000a;-- include just one type of pending operation (a carryover, another&#x000a;-- Boolean, on each edge) ... assume that release and distribute are&#x000a;-- combined into an atomic operation.  Then, a carryover operation,&#x000a;-- when processed, makes a neighbor joint unbalanced.&#x000a;&#x000a;/*&#x000a; * A model of the Hardy Cross method of moment distribution&#x000a; *&#x000a; * Date: January 7, 2018&#x000a; * Alloy Analyzer 4.2_2015-02-22 (build date: 2015-02-22 18:21 EST)&#x000a; *&#x000a; */&#x000a;&#x000a;open util/graph [Vertex]&#x000a;open util/ordering [State] as so&#x000a;&#x000a;abstract sig Bool {}&#x000a;one sig True, False extends Bool {}&#x000a;&#x000a;abstract sig Counter {}&#x000a;one sig Test, Send, Receive extends Counter {}&#x000a;&#x000a;sig State {}&#x000a;&#x000a;sig Vertex {&#x000a;  pc: Counter one -&gt; State,     -- program counter only for implementation I&#x000a;  balanced: Bool one -&gt; State,  -- associated member ends balance&#x000a;  end: Vertex -&gt; Bool -&gt; State  -- member ends and carryover from u to v&#x000a;}&#x000a;&#x000a;-- the set of edges is defined by x-y vertex pairs that have ends&#x000a;-- associated with them&#x000a;fun edges: Vertex-&gt;Vertex {&#x000a;  { x, y: Vertex | some end[x, y] }&#x000a;}&#x000a;&#x000a;-- min topological requirements for a building structure (overapproximation)&#x000a;fact { noSelfLoops[edges] and undirected[edges] and stronglyConnected[edges] }&#x000a;&#x000a;-- one carryover value associated with each member end in each state&#x000a;fact { all x, y: Vertex, s: State | some end[x, y] =&gt; one end[x, y].s }&#x000a;&#x000a;------------------------------------------------------------------------------&#x000a;&#x000a;-- Specification S&#x000a;&#x000a;pred init_S [s: State] {&#x000a;  all x: Vertex |&#x000a;    x.balanced.s = False   -- all unbalanced, but could leave undetermined&#x000a;  all x, y: Vertex |&#x000a;    x-&gt;y in edges =&gt; end[x, y].s = False   -- no pending carryovers&#x000a;}&#x000a;&#x000a;pred step_S [s, s&apos;: State] {&#x000a;  (some x: Vertex | release[x, s, s&apos;])&#x000a;  or (some x, y: Vertex | x-&gt;y in edges and carryover[x, y, s, s&apos;])&#x000a;  or stutter[s, s&apos;]&#x000a;}&#x000a;&#x000a;pred stutter [s, s&apos;: State] {&#x000a;  all x: Vertex |&#x000a;    x.balanced.s&apos; = x.balanced.s&#x000a;  all x, y: Vertex |&#x000a;    x-&gt;y in edges =&gt; end[x, y].s&apos; = end[x, y].s&#x000a;}&#x000a;&#x000a;-- a release can happen only when u is unbalanced and has no pending&#x000a;-- carryover operations that it needs to perform&#x000a;pred release [u: Vertex, s, s&apos;: State] {&#x000a;  u.balanced.s = False and no pending[u, s]&#x000a;  all x: Vertex |&#x000a;    x.balanced.s&apos; = (x = u =&gt; True else x.balanced.s)&#x000a;  all x, y: Vertex | x-&gt;y in edges =&gt;&#x000a;    end[x, y].s&apos; = (x = u =&gt; True else end[x, y].s)&#x000a;}&#x000a;&#x000a;-- edges x-&gt;y where x = u with a pending operation (that makes y unbalanced)&#x000a;fun pending [u: Vertex, s: State]: Vertex-&gt;Vertex {&#x000a;  { x, y: Vertex | x-&gt;y in edges and x = u and end[x, y].s = True }&#x000a;}&#x000a;&#x000a;-- makes v unbalanced, discharging pending u-&gt;v carryover operation&#x000a;pred carryover [u, v: Vertex, s, s&apos;: State] {&#x000a;  end[u, v].s = True&#x000a;  all y: Vertex |&#x000a;    y.balanced.s&apos; = (y = v =&gt; False else y.balanced.s)&#x000a;  all x, y: Vertex | x-&gt;y in edges =&gt;&#x000a;    end[x, y].s&apos; = (x = u and y = v =&gt; False else end[x, y].s)&#x000a;}&#x000a;&#x000a;------------------------------------------------------------------------------&#x000a;&#x000a;-- generate some instances&#x000a;&#x000a;pred show_S {&#x000a;  no x: Vertex | x = A or x = B or x = C -- disable Baugh/Liu example&#x000a;  #Vertex &gt; 1&#x000a;  init_S[so/first]&#x000a;  all s: State - so/last | step_S[s, s.so/next]&#x000a;}&#x000a;&#x000a;run show_S for 4 Vertex, 10 State&#x000a;&#x000a;-- example from Baugh/Liu&#x000a;&#x000a;lone sig A, B, C extends Vertex {}&#x000a;&#x000a;-- from Baugh/Liu (except that, here, every joint can be released)&#x000a;pred example {&#x000a;  all x: Vertex | x = A or x = B or x = C -- or declare Vertex abstract&#x000a;  A-&gt;B in edges&#x000a;  B-&gt;C in edges&#x000a;  A-&gt;C not in edges&#x000a;}&#x000a;&#x000a;pred show_S_ex {&#x000a;  init_S[so/first]&#x000a;  all s: State - so/last | step_S[s, s.so/next]&#x000a;  example&#x000a;  my_steps&#x000a;--  my_steps_broken&#x000a;}&#x000a;&#x000a;run show_S_ex for 3 Vertex, 11 State -- 11 states needed for my_steps&#x000a;&#x000a;-- a sample trace with simultaneous releases, followed by carryovers,&#x000a;-- releases, and so on ...&#x000a;pred my_steps {&#x000a;  let s0 = so/first, s1 = s0.so/next, s2 = s1.so/next, s3 = s2.so/next,&#x000a;    s4 = s3.so/next, s5 = s4.so/next, s6 = s5.so/next, s7 = s6.so/next,&#x000a;    s8 = s7.so/next, s9 = s8.so/next, s10 = s9.so/next {&#x000a;      release[A, s0, s1]&#x000a;      release[B, s1, s2]&#x000a;      release[C, s2, s3]&#x000a;      carryover[A, B, s3, s4]&#x000a;      carryover[B, C, s4, s5]&#x000a;      carryover[B, A, s5, s6]&#x000a;      carryover[C, B, s6, s7]&#x000a;      release[A, s7, s8]&#x000a;      release[B, s8, s9]&#x000a;      release[C, s9, s10]&#x000a;  }&#x000a;}&#x000a;&#x000a;pred my_steps_broken {&#x000a;  let s0 = so/first, s1 = s0.so/next, s2 = s1.so/next, s3 = s2.so/next,&#x000a;    s4 = s3.so/next, s5 = s4.so/next, s6 = s5.so/next {&#x000a;      release[A, s0, s1]&#x000a;      release[B, s1, s2]&#x000a;      release[C, s2, s3]&#x000a;      carryover[A, B, s3, s4]&#x000a;      carryover[B, C, s4, s5]&#x000a;      release[B, s5, s6]      -- can&apos;t release B, has a pending carryover&#x000a;  }&#x000a;}&#x000a;&#x000a;------------------------------------------------------------------------------&#x000a;&#x000a;-- Implementation I: synchronous message passing between concurrent processes&#x000a;&#x000a;pred init_I [s: State] {&#x000a;  init_S[s]&#x000a;  all x: Vertex | x.pc.s = Test&#x000a;}&#x000a;&#x000a;pred step_I [s, s&apos;: State] {&#x000a;  some x: Vertex | process[x, s, s&apos;]&#x000a;}&#x000a;&#x000a;-- associate a concurrent process with each vertex&#x000a;pred process [u: Vertex, s, s&apos;: State] {&#x000a;  test[u, s, s&apos;] or leave_send[u, s, s&apos;] or leave_receive[u, s, s&apos;]&#x000a;  or one v: Vertex | u-&gt;v in edges and synch[u, v, s, s&apos;]&#x000a;}&#x000a;&#x000a;pred test [u: Vertex, s, s&apos;: State] {&#x000a;  u.pc.s = Test&#x000a;  enter_send[u, s, s&apos;] or enter_receive[u, s, s&apos;]&#x000a;}&#x000a;&#x000a;pred enter_send[u: Vertex, s, s&apos;: State] {&#x000a;  u.balanced.s = False&#x000a;  u.pc.s&apos; = Send&#x000a;  u.balanced.s&apos; = True&#x000a;  all x, y: Vertex | x-&gt;y in edges =&gt;&#x000a;    end[x, y].s&apos; = (x = u =&gt; True else end[x, y].s)&#x000a;  unchanged[Vertex - u, none-&gt;none, s, s&apos;]&#x000a;}&#x000a;&#x000a;pred leave_send [u: Vertex, s, s&apos;: State] {&#x000a;  u.pc.s = Send and no { v: Vertex | end[u, v].s = True }&#x000a;  u.pc.s&apos; = Test&#x000a;  u.balanced.s&apos; = u.balanced.s -- was made True in test, leave as is&#x000a;  unchanged[Vertex - u, edges, s, s&apos;]&#x000a;}&#x000a;&#x000a;pred enter_receive[u: Vertex, s, s&apos;: State] {&#x000a;  some x: Vertex | end[x, u].s = True and x.pc.s = Send&#x000a;  u.pc.s&apos; = Receive&#x000a;  u.balanced.s&apos; = u.balanced.s&#x000a;  unchanged[Vertex - u, edges, s, s&apos;]&#x000a;}&#x000a;&#x000a;pred leave_receive [v: Vertex, s, s&apos;: State] {&#x000a;  v.pc.s = Receive and no { u: Vertex | end[u, v].s = True }&#x000a;  v.pc.s&apos; = Test&#x000a;  v.balanced.s&apos; = v.balanced.s -- was made False on synch, leave as is&#x000a;  unchanged[Vertex - v, edges, s, s&apos;]&#x000a;}&#x000a;&#x000a;pred synch [u, v: Vertex, s, s&apos;: State] {&#x000a;  u.pc.s = Send and v.pc.s = Receive and end[u, v].s = True&#x000a;  v.pc.s&apos; = v.pc.s        -- receiver remains in receive mode    &#x000a;  v.balanced.s&apos; = False   -- but becomes unbalanced&#x000a;  end[u, v].s&apos; = False    -- and the edge token is consumed&#x000a;  unchanged[Vertex - v, edges - u-&gt;v, s, s&apos;]&#x000a;}&#x000a;&#x000a;pred unchanged [vs: set Vertex, es: Vertex-&gt;Vertex, s, s&apos;: State] {&#x000a;  all x: vs |&#x000a;    x.pc.s&apos; = x.pc.s and x.balanced.s&apos; = x.balanced.s&#x000a;  all x, y: Vertex |&#x000a;    x-&gt;y in es =&gt; end[x, y].s&apos; = end[x, y].s&#x000a;}&#x000a;&#x000a;------------------------------------------------------------------------------&#x000a;&#x000a;-- generate some instances&#x000a;&#x000a;pred show_I_ex {&#x000a;  init_I[so/first]&#x000a;  all s: State - so/last | step_I[s, s.so/next]&#x000a;  example&#x000a;  my_steps2 -- comment out to generate all traces&#x000a;}&#x000a;&#x000a;run show_I_ex for 3 Vertex, 9 State&#x000a;&#x000a;run show_I_ex for 3 Vertex, 40 State&#x000a;&#x000a;-- show (an instance of) the relationship between S and I&#x000a;pred my_steps2 {&#x000a;  let s0 = so/first, s1 = s0.so/next, s2 = s1.so/next, s3 = s2.so/next,&#x000a;    s4 = s3.so/next, s5 = s4.so/next, s6 = s5.so/next, s7 = s6.so/next,&#x000a;    s8 = s7.so/next {&#x000a;      test[B, s0, s1] and release[B, s0, s1]     -- balance B, send to A &amp; C&#x000a;      test[A, s1, s2] and stutter[s1, s2]        -- let A enter receive mode&#x000a;      test[C, s2, s3] and stutter[s2, s3]        -- let C enter receive mode&#x000a;      synch[B, C, s3, s4] and carryover[B, C, s3, s4] -- pass from B to C&#x000a;      leave_receive[C, s4, s5] and stutter[s4, s5] -- C returns to test&#x000a;      test[C, s5, s6] and release[C, s5, s6]     -- balance C, send to B&#x000a;      synch[B, A, s6, s7] and carryover[B, A, s6, s7] -- pass from B to A&#x000a;      leave_send[B, s7, s8] and stutter[s7, s8]  -- B returns to test&#x000a;  }&#x000a;}&#x000a;&#x000a;------------------------------------------------------------------------------&#x000a;&#x000a;-- fails because it includes a state in I that is unreachable&#x000a;&#x000a;assert refines {&#x000a;  example =&gt;&#x000a;    let s0 = so/first, s = s0.so/next, s&apos; = s.so/next {&#x000a;        init_I[s0] implies init_S[s0]&#x000a;        step_I[s, s&apos;] implies step_S[s, s&apos;]&#x000a;      }&#x000a;}&#x000a;&#x000a;check refines for 3 Vertex, 3 State&#x000a;&#x000a;-- a vertex cannot be in test mode and still have carryovers to communicate&#x000a;pred unreachable [u: Vertex, s: State] {&#x000a;  u.pc.s = Test&#x000a;  some v: Vertex | u-&gt;v in edges and end[u, v].s = True&#x000a;}&#x000a;&#x000a;pred show_unreachable {&#x000a;  init_I[so/first]&#x000a;  all s: State - so/last | step_I[s, s.so/next]&#x000a;  some u: Vertex, s: State | unreachable[u, s]&#x000a;}&#x000a;&#x000a;run show_unreachable for 5 Vertex, 30 State&#x000a;&#x000a;assert refines2 {&#x000a;  (all x: Vertex, s: State | not unreachable[x, s]) =&gt;&#x000a;    let s0 = so/first, s = s0.so/next, s&apos; = s.so/next {&#x000a;        init_I[s0] implies init_S[s0]&#x000a;        step_I[s, s&apos;] implies step_S[s, s&apos;]&#x000a;      }&#x000a;}&#x000a;&#x000a;check refines2 for 10 Vertex, 3 State&#x000a;"/>
+
+<source filename="/$alloy4$/models/util/integer.als" content="module util/integer&#x000a;&#x000a;/*&#x000a; * A collection of utility functions for using Integers in Alloy.&#x000a; * Note that integer overflows are silently truncated to the current bitwidth&#x000a; * using the 2&apos;s complement arithmetic, unless the &quot;forbid overfows&quot; option is&#x000a; * turned on, in which case only models that don&apos;t have any overflows are &#x000a; * analyzed. &#x000a; */&#x000a;&#x000a;fun add  [n1, n2: Int] : Int { this/plus[n1, n2] }&#x000a;fun plus [n1, n2: Int] : Int { n1 fun/add n2 }&#x000a;&#x000a;fun sub   [n1, n2: Int] : Int { this/minus[n1, n2] }&#x000a;fun minus [n1, n2: Int] : Int { n1 fun/sub n2 }&#x000a;&#x000a;fun mul [n1, n2: Int] : Int { n1 fun/mul n2 }&#x000a;&#x000a;/**&#x000a; * Performs the division with &quot;round to zero&quot; semantics, except the following 3 cases&#x000a; * 1) if a is 0, then it returns 0&#x000a; * 2) else if b is 0, then it returns 1 if a is negative and -1 if a is positive&#x000a; * 3) else if a is the smallest negative integer, and b is -1, then it returns a&#x000a; */&#x000a;fun div [n1, n2: Int] : Int { n1 fun/div n2 }&#x000a;&#x000a;/** answer is defined to be the unique integer that satisfies &quot;a = ((a/b)*b) + remainder&quot; */&#x000a;fun rem [n1, n2: Int] : Int { n1 fun/rem n2 }&#x000a;&#x000a;/** negate */&#x000a;fun negate [n: Int] : Int { 0 fun/sub n }&#x000a;&#x000a;/** equal to */&#x000a;pred eq [n1, n2: Int] { int[n1] = int[n2] }&#x000a;&#x000a;/** greater than */&#x000a;pred gt [n1, n2: Int] { n1 &gt; n2 }&#x000a;&#x000a;/** less then */&#x000a;pred lt [n1, n2: Int] { n1 &lt; n2 }&#x000a;&#x000a;/** greater than or equal */&#x000a;pred gte [n1, n2: Int] { n1 &gt;= n2 }&#x000a;&#x000a;/** less than or equal */&#x000a;pred lte [n1, n2: Int] { n1 &lt;= n2 }&#x000a;&#x000a;/** integer is zero */&#x000a;pred zero [n: Int] { n = 0 }&#x000a;&#x000a;/** positive */&#x000a;pred pos  [n: Int] { n &gt; 0 }&#x000a;&#x000a;/** negative */&#x000a;pred neg  [n: Int] { n &lt; 0 }&#x000a;&#x000a;/** non-positive */&#x000a;pred nonpos [n: Int] { n &lt;= 0 }&#x000a;&#x000a;/** non-negative */&#x000a;pred nonneg [n: Int] { n &gt;= 0 }&#x000a;&#x000a;/** signum (aka sign or sgn) */&#x000a;fun signum [n: Int] : Int { n&lt;0 =&gt; (0 fun/sub 1) else (n&gt;0 =&gt; 1 else 0) }&#x000a;&#x000a;/**&#x000a; * returns the ith element (zero-based) from the set s&#x000a; * in the ordering of &apos;next&apos;, which is a linear ordering&#x000a; * relation like that provided by util/ordering&#x000a; */&#x000a;fun int2elem[i: Int, next: univ-&gt;univ, s: set univ] : lone s {&#x000a;  {e: s | #^next.e = int i }&#x000a;}&#x000a;&#x000a;/**&#x000a; * returns the index of the element (zero-based) in the&#x000a; * ordering of next, which is a linear ordering relation&#x000a; * like that provided by util/ordering&#x000a; */&#x000a;fun elem2int[e: univ, next: univ-&gt;univ] : lone Int {&#x000a;  Int[#^next.e]&#x000a;}&#x000a;&#x000a;/** returns the largest integer in the current bitwidth */&#x000a;fun max:one Int { fun/max }&#x000a;&#x000a;/** returns the smallest integer in the current bitwidth */&#x000a;fun min:one Int { fun/min }&#x000a;&#x000a;/** maps each integer (except max) to the integer after it */&#x000a;fun next:Int-&gt;Int { fun/next }&#x000a;&#x000a;/** maps each integer (except min) to the integer before it */&#x000a;fun prev:Int-&gt;Int { ~next }&#x000a;&#x000a;/** given a set of integers, return the largest element */&#x000a;fun max [es: set Int]: lone Int { es - es.^prev }&#x000a;&#x000a;/** given a set of integers, return the smallest element */&#x000a;fun min [es: set Int]: lone Int { es - es.^next }&#x000a;&#x000a;/** given an integer, return all integers prior to it */&#x000a;fun prevs [e: Int]: set Int { e.^prev }&#x000a;&#x000a;/** given an integer, return all integers following it */&#x000a;fun nexts [e: Int]: set Int { e.^next }&#x000a;&#x000a;/** returns the larger of the two integers */&#x000a;fun larger [e1, e2: Int]: Int { let a=int[e1], b=int[e2] | (a&lt;b =&gt; b else a) }&#x000a;&#x000a;/** returns the smaller of the two integers */&#x000a;fun smaller [e1, e2: Int]: Int { let a=int[e1], b=int[e2] | (a&lt;b =&gt; a else b) }&#x000a;"/>
+
+<source filename="/$alloy4$/models/util/graph.als" content="module util/graph[node]&#x000a;&#x000a;/*&#x000a; * Utilities for some common operations and contraints&#x000a; * on graphs.&#x000a; *&#x000a; * author: Greg Dennis&#x000a; */&#x000a;&#x000a;open util/relation as rel&#x000a;&#x000a;/** graph in undirected */&#x000a;pred undirected [r: node-&gt;node] {&#x000a;  symmetric[r]&#x000a;}&#x000a;&#x000a;/** graph has no self-loops */&#x000a;pred noSelfLoops[r: node-&gt;node] {&#x000a;  irreflexive[r]&#x000a;}&#x000a;&#x000a;/** graph is weakly connected */&#x000a;pred weaklyConnected[r: node-&gt;node] {&#x000a;  all n1, n2: node | n1 in n2.*(r + ~r)  // Changed from ^ to * to permit singleton&#x000a;}&#x000a;&#x000a;/** graph is strongly connected */&#x000a;pred stronglyConnected[r: node-&gt;node] {&#x000a;  all n1, n2: node | n1 in n2.*r         // Changed from ^ to * to permit singleton&#x000a;}&#x000a;&#x000a;/** graph is rooted at root */&#x000a;pred rootedAt[r: node-&gt;node, root: node] {&#x000a;  node in root.*r&#x000a;}&#x000a;&#x000a;/** graph is a ring */&#x000a;pred ring [r: node-&gt;node] {&#x000a;  all n: node | one n.r &amp;&amp; rootedAt[r, n]&#x000a;}&#x000a;&#x000a;/** graph is a dag */&#x000a;pred dag [r: node-&gt;node] {&#x000a;  acyclic[r, node]&#x000a;}&#x000a;&#x000a;/** graph is a forest */&#x000a;pred forest [r: node-&gt;node] {&#x000a;  dag[r]&#x000a;  all n: node | lone r.n&#x000a;}&#x000a;&#x000a;/** graph is a tree */&#x000a;pred tree [r: node-&gt;node] {&#x000a;  forest[r]&#x000a;  lone root: node | no r.root&#x000a;}&#x000a;&#x000a;/** graph is a tree rooted at root */&#x000a;pred treeRootedAt[r: node-&gt;node, root: node] {&#x000a;  forest[r]&#x000a;  rootedAt[r, root]&#x000a;}&#x000a;&#x000a;/** returns the roots of the graph */&#x000a;fun roots [r: node-&gt;node] : set node {&#x000a;  node - node.^r&#x000a;}&#x000a;&#x000a;/** returns the leaves of the grpah */&#x000a;fun leaves [r: node-&gt;node] : set node {&#x000a;  node - node.^~r&#x000a;}&#x000a;&#x000a;/** returns the inner nodes (non-leaves) of the graph */&#x000a;fun  innerNodes [r: node-&gt;node] : set node {&#x000a;  node - leaves[r]&#x000a;}&#x000a;"/>
+
+<source filename="/$alloy4$/models/util/relation.als" content="module util/relation&#x000a;&#x000a;/*&#x000a; * Utilities for some common operations and constraints&#x000a; * on binary relations. The keyword &apos;univ&apos; represents the&#x000a; * top-level type, which all other types implicitly extend.&#x000a; * Therefore, all the functions and predicates in this model&#x000a; * may be applied to binary relations of any type.&#x000a; *&#x000a; * author: Greg Dennis&#x000a; */&#x000a;&#x000a;/** returns the domain of a binary relation */&#x000a;fun dom [r: univ-&gt;univ] : set (r.univ) { r.univ }&#x000a;&#x000a;/** returns the range of a binary relation */&#x000a;fun ran [r: univ-&gt;univ] : set (univ.r) { univ.r }&#x000a;&#x000a;/** r is total over the domain s */&#x000a;pred total [r: univ-&gt;univ, s: set univ] {&#x000a;  all x: s | some x.r&#x000a;}&#x000a;&#x000a;/** r is a partial function over the domain s */&#x000a;pred functional [r: univ-&gt;univ, s: set univ] {&#x000a;  all x: s | lone x.r&#x000a;}&#x000a;&#x000a;/** r is a total function over the domain s */&#x000a;pred function [r: univ-&gt;univ, s: set univ] {&#x000a;  all x: s | one x.r&#x000a;}&#x000a;&#x000a;/** r is surjective over the codomain s */&#x000a;pred surjective [r: univ-&gt;univ, s: set univ] {&#x000a;  all x: s | some r.x&#x000a;}&#x000a;&#x000a;/** r is injective */&#x000a;pred injective [r: univ-&gt;univ, s: set univ] {&#x000a;  all x: s | lone r.x&#x000a;}&#x000a;&#x000a;/** r is bijective over the codomain s */&#x000a;pred bijective[r: univ-&gt;univ, s: set univ] {&#x000a;  all x: s | one r.x&#x000a;}&#x000a;&#x000a;/** r is a bijection over the domain d and the codomain c */&#x000a;pred bijection[r: univ-&gt;univ, d, c: set univ] {&#x000a;  function[r, d] &amp;&amp; bijective[r, c]&#x000a;}&#x000a;&#x000a;/** r is reflexive over the set s */&#x000a;pred reflexive [r: univ -&gt; univ, s: set univ] {s&lt;:iden in r}&#x000a;&#x000a;/** r is irreflexive */&#x000a;pred irreflexive [r: univ -&gt; univ] {no iden &amp; r}&#x000a;&#x000a;/** r is symmetric */&#x000a;pred symmetric [r: univ -&gt; univ] {~r in r}&#x000a;&#x000a;/** r is anti-symmetric */&#x000a;pred antisymmetric [r: univ -&gt; univ] {~r &amp; r in iden}&#x000a;&#x000a;/** r is transitive */&#x000a;pred transitive [r: univ -&gt; univ] {r.r in r}&#x000a;&#x000a;/** r is acyclic over the set s */&#x000a;pred acyclic[r: univ-&gt;univ, s: set univ] {&#x000a;  all x: s | x !in x.^r&#x000a;}&#x000a;&#x000a;/** r is complete over the set s */&#x000a;pred complete[r: univ-&gt;univ, s: univ] {&#x000a;  all x,y:s | (x!=y =&gt; x-&gt;y in (r + ~r))&#x000a;}&#x000a;&#x000a;/** r is a preorder (or a quasi-order) over the set s */&#x000a;pred preorder [r: univ -&gt; univ, s: set univ] {&#x000a;  reflexive[r, s]&#x000a;  transitive[r]&#x000a;}&#x000a;&#x000a;/** r is an equivalence relation over the set s */&#x000a;pred equivalence [r: univ-&gt;univ, s: set univ] {&#x000a;  preorder[r, s]&#x000a;  symmetric[r]&#x000a;}&#x000a;&#x000a;/** r is a partial order over the set s */&#x000a;pred partialOrder [r: univ -&gt; univ, s: set univ] {&#x000a;  preorder[r, s]&#x000a;  antisymmetric[r]&#x000a;}&#x000a;&#x000a;/** r is a total order over the set s */&#x000a;pred totalOrder [r: univ -&gt; univ, s: set univ] {&#x000a;  partialOrder[r, s]&#x000a;  complete[r, s]&#x000a;}&#x000a;"/>
+
+<source filename="/$alloy4$/models/util/ordering.als" content="module util/ordering[exactly elem]&#x000a;&#x000a;/*&#x000a; * Creates a single linear ordering over the atoms in elem. It also constrains all&#x000a; * the atoms to exist that are permitted by the scope on elem. That is, if the scope&#x000a; * on a signature S is 5, opening util/ordering[S] will force S to have 5 elements&#x000a; * and create a linear ordering over those five elements. The predicates and&#x000a; * functions below provide access to properties of the linear ordering, such as&#x000a; * which element is first in the ordering, or whether a given element precedes&#x000a; * another. You cannotcreate multiple linear orderings over the same signature with&#x000a; * this model. If you that functionality, try using the util/sequence module instead.&#x000a; *&#x000a; * Technical comment:&#x000a; * An important constraint: elem must contain all atoms permitted by the scope.&#x000a; * This is to let the analyzer optimize the analysis by setting all fields of each&#x000a; * instantiation of Ord to predefined values: e.g. by setting &apos;last&apos; to the highest&#x000a; * atom of elem and by setting &apos;next&apos; to {&lt;T0,T1&gt;,&lt;T1,T2&gt;,...&lt;Tn-1,Tn&gt;}, where n is&#x000a; * the scope of elem. Without this constraint, it might not be true that Ord.last is&#x000a; * a subset of elem, and that the domain and range of Ord.next lie inside elem.&#x000a; *&#x000a; * author: Ilya Shlyakhter&#x000a; * revisions: Daniel jackson&#x000a; */&#x000a;&#x000a;private one sig Ord {&#x000a;   First: set elem,&#x000a;   Next: elem -&gt; elem&#x000a;} {&#x000a;   pred/totalOrder[elem,First,Next]&#x000a;}&#x000a;&#x000a;/** first */&#x000a;fun first: one elem { Ord.First }&#x000a;&#x000a;/** last */&#x000a;fun last: one elem { elem - (next.elem) }&#x000a;&#x000a;/** return a mapping from each element to its predecessor */&#x000a;fun prev : elem-&gt;elem { ~(Ord.Next) }&#x000a;&#x000a;/** return a mapping from each element to its successor */&#x000a;fun next : elem-&gt;elem { Ord.Next }&#x000a;&#x000a;/** return elements prior to e in the ordering */&#x000a;fun prevs [e: elem]: set elem { e.^(~(Ord.Next)) }&#x000a;&#x000a;/** return elements following e in the ordering */&#x000a;fun nexts [e: elem]: set elem { e.^(Ord.Next) }&#x000a;&#x000a;/** e1 is less than e2 in the ordering */&#x000a;pred lt [e1, e2: elem] { e1 in prevs[e2] }&#x000a;&#x000a;/** e1 is greater than e2 in the ordering */&#x000a;pred gt [e1, e2: elem] { e1 in nexts[e2] }&#x000a;&#x000a;/** e1 is less than or equal to e2 in the ordering */&#x000a;pred lte [e1, e2: elem] { e1=e2 || lt [e1,e2] }&#x000a;&#x000a;/** e1 is greater than or equal to e2 in the ordering */&#x000a;pred gte [e1, e2: elem] { e1=e2 || gt [e1,e2] }&#x000a;&#x000a;/** returns the larger of the two elements in the ordering */&#x000a;fun larger [e1, e2: elem]: elem { lt[e1,e2] =&gt; e2 else e1 }&#x000a;&#x000a;/** returns the smaller of the two elements in the ordering */&#x000a;fun smaller [e1, e2: elem]: elem { lt[e1,e2] =&gt; e1 else e2 }&#x000a;&#x000a;/**&#x000a; * returns the largest element in es&#x000a; * or the empty set if es is empty&#x000a; */&#x000a;fun max [es: set elem]: lone elem { es - es.^(~(Ord.Next)) }&#x000a;&#x000a;/**&#x000a; * returns the smallest element in es&#x000a; * or the empty set if es is empty&#x000a; */&#x000a;fun min [es: set elem]: lone elem { es - es.^(Ord.Next) }&#x000a;&#x000a;assert correct {&#x000a;  let mynext = Ord.Next |&#x000a;  let myprev = ~mynext | {&#x000a;     ( all b:elem | (lone b.next) &amp;&amp; (lone b.prev) &amp;&amp; (b !in b.^mynext) )&#x000a;     ( (no first.prev) &amp;&amp; (no last.next) )&#x000a;     ( all b:elem | (b!=first &amp;&amp; b!=last) =&gt; (one b.prev &amp;&amp; one b.next) )&#x000a;     ( !one elem =&gt; (one first &amp;&amp; one last &amp;&amp; first!=last &amp;&amp; one first.next &amp;&amp; one last.prev) )&#x000a;     ( one elem =&gt; (first=elem &amp;&amp; last=elem &amp;&amp; no myprev &amp;&amp; no mynext) )&#x000a;     ( myprev=~mynext )&#x000a;     ( elem = first.*mynext )&#x000a;     (all disj a,b:elem | a in b.^mynext or a in b.^myprev)&#x000a;     (no disj a,b:elem | a in b.^mynext and a in b.^myprev)&#x000a;     (all disj a,b,c:elem | (b in a.^mynext and c in b.^mynext) =&gt;(c in a.^mynext))&#x000a;     (all disj a,b,c:elem | (b in a.^myprev and c in b.^myprev) =&gt;(c in a.^myprev))&#x000a;  }&#x000a;}&#x000a;run {} for exactly 0 elem expect 0&#x000a;run {} for exactly 1 elem expect 1&#x000a;run {} for exactly 2 elem expect 1&#x000a;run {} for exactly 3 elem expect 1&#x000a;run {} for exactly 4 elem expect 1&#x000a;check correct for exactly 0 elem&#x000a;check correct for exactly 1 elem&#x000a;check correct for exactly 2 elem&#x000a;check correct for exactly 3 elem&#x000a;check correct for exactly 4 elem&#x000a;check correct for exactly 5 elem&#x000a;"/>
+
+</alloy>
