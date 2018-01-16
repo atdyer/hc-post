@@ -1,18 +1,35 @@
 import xmltodict
 
 
-class Item(object):
+class LabelItem(object):
+
+    def __init__(self, label):
+
+        self._label = label
+
+    def label(self):
+
+        return self._label
+
+
+class IDItem(LabelItem):
 
     def __init__(self, label, uid):
 
-        self._label = label
+        super().__init__(label)
         self._uid = uid
+
+    def id(self):
+
+        return self._uid
+
+
+class TreeItem(object):
+
+    def __init__(self):
+
         self._parent = None
         self._children = []
-
-    def __eq__(self, other):
-
-        return isinstance(self, type(other)) and self.label() == other.label()
 
     def add_child(self, child):
 
@@ -32,21 +49,27 @@ class Item(object):
 
     def find_by_id(self, uid):
 
-        if self.id() == uid:
-            return self
-        for child in self.children():
-            item = child.find_by_id(uid)
-            if item is not None:
-                return item
+        if isinstance(self, IDItem):
+            if self.id() == uid:
+                return self
+        for child in self._children:
+            if isinstance(child, TreeItem):
+                child = child.find_by_id(uid)
+                if child is not None:
+                    return child
         return None
 
-    def id(self):
+    def find_by_label(self, label):
 
-        return self._uid
-
-    def label(self):
-
-        return self._label
+        if isinstance(self, LabelItem):
+            if self.label() == label:
+                return self
+        for child in self._children:
+            if isinstance(child, TreeItem):
+                child = child.find_by_label(label)
+                if child is not None:
+                    return child
+        return None
 
     def parent(self, *parent):
 
@@ -60,14 +83,18 @@ class Item(object):
 
         print(' '*depth, self)
         for child in self.children():
-            child.print(depth+2)
+            if isinstance(child, TreeItem):
+                child.print(depth+2)
+            else:
+                print(' '*(depth+2), child)
 
 
-class Signature(Item):
+class Signature(TreeItem, IDItem):
 
     def __init__(self, data):
 
-        super().__init__(data['@label'], data['@ID'])
+        TreeItem.__init__(self)
+        IDItem.__init__(self, data['@label'], data['@ID'])
 
         # Extract properties
         self._abstract = True if '@abstract' in data and data['@abstract'] == 'yes' else False
@@ -81,10 +108,10 @@ class Signature(Item):
         if 'atom' in data:
             atoms = data['atom']
             if self._lone or self._one:
-                self._atoms.append(Atom(self, atoms['@label']))
+                self._add_atom(Atom(self, atoms['@label']))
             else:
                 for atom in atoms:
-                    self._atoms.append(Atom(self, atom['@label']))
+                    self._add_atom(Atom(self, atom['@label']))
 
     def __repr__(self):
 
@@ -92,7 +119,7 @@ class Signature(Item):
 
     def atoms(self):
 
-        atoms = self._atoms
+        atoms = self._atoms[:]
         for sig in self.signatures():
             atoms += sig.atoms()
         return atoms
@@ -112,13 +139,18 @@ class Signature(Item):
 
         return [child for child in self.children() if isinstance(child, Signature)]
 
+    def _add_atom(self, atom):
 
-class Atom:
+        self.add_child(atom)
+        self._atoms.append(atom)
+
+
+class Atom(LabelItem):
 
     def __init__(self, sig, label):
 
+        super().__init__(label)
         self._sig = sig
-        self._label = label
 
     def __repr__(self):
 
@@ -128,16 +160,13 @@ class Atom:
 
         return self._sig
 
-    def label(self):
 
-        return self._label
-
-
-class Field(Item):
+class Field(TreeItem, IDItem):
 
     def __init__(self, data, sig_tree):
 
-        super().__init__(data['@label'], data['@ID'])
+        TreeItem.__init__(self)
+        IDItem.__init__(self, data['@label'], data['@ID'])
 
         # Extract field types
         types = data['types']['type']
@@ -153,7 +182,7 @@ class Field(Item):
                 labels = [atom['@label'] for atom in tup['atom']]
                 labels_and_types = zip(labels, self.types())
                 tup = tuple([sig.find_atom(label) for label, sig in labels_and_types])
-                self._tuples.append(tup)
+                self._add_tuple(tup)
 
     def __repr__(self):
 
@@ -166,6 +195,11 @@ class Field(Item):
     def types(self):
 
         return self._types
+
+    def _add_tuple(self, tup):
+
+        self.add_child(tup)
+        self._tuples.append(tup)
 
 
 # Creates list of items that are in a but not in b
@@ -232,9 +266,7 @@ class Universe:
 
         self._univ.print()
 
+    def instance(self):
 
-test = Universe('data/ex1.xml')
-print(test.filename())
-print(test.command())
-test.print()
+        return self._univ
 
