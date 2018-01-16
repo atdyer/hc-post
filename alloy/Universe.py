@@ -1,29 +1,6 @@
 import xmltodict
 
 
-class LabelItem(object):
-
-    def __init__(self, label):
-
-        self._label = label
-
-    def label(self):
-
-        return self._label
-
-
-class IDItem(LabelItem):
-
-    def __init__(self, label, uid):
-
-        super().__init__(label)
-        self._uid = uid
-
-    def id(self):
-
-        return self._uid
-
-
 class TreeItem(object):
 
     def __init__(self):
@@ -33,7 +10,10 @@ class TreeItem(object):
 
     def add_child(self, child):
 
-        self._children.append(child)
+        if child not in self._children:
+            self._children.append(child)
+            if isinstance(child, TreeItem):
+                child.parent(self)
         return self
 
     def children(self):
@@ -47,6 +27,18 @@ class TreeItem(object):
                 func(child)
             child.each_child(func, typecheck)
 
+    def find(self, label):
+
+        if isinstance(self, LabelItem):
+            if self.label() == label:
+                return self
+        for child in self._children:
+            if isinstance(child, TreeItem):
+                child = child.find(label)
+                if child is not None:
+                    return child
+        return None
+
     def find_by_id(self, uid):
 
         if isinstance(self, IDItem):
@@ -59,24 +51,18 @@ class TreeItem(object):
                     return child
         return None
 
-    def find_by_label(self, label):
-
-        if isinstance(self, LabelItem):
-            if self.label() == label:
-                return self
-        for child in self._children:
-            if isinstance(child, TreeItem):
-                child = child.find_by_label(label)
-                if child is not None:
-                    return child
-        return None
-
     def parent(self, *parent):
 
         if len(parent) == 0:
             return self._parent
         else:
-            self._parent = parent[0]
+            parent = parent[0]
+            if self._parent is not parent:
+                if self._parent is not None:
+                    self._parent.remove_child(self)
+                self._parent = parent
+                if self._parent is not None:
+                    self._parent.add_child(self)
             return self
 
     def print(self, depth=0):
@@ -88,12 +74,49 @@ class TreeItem(object):
             else:
                 print(' '*(depth+2), child)
 
+    def remove_child(self, child):
 
-class Signature(TreeItem, IDItem):
+        if child in self._children:
+            self._children.remove(child)
+            child.parent(None)
+
+
+class LabelItem(TreeItem):
+
+    def __init__(self, label):
+
+        super().__init__()
+        self._label = label
+
+    def __eq__(self, other):
+
+        return isinstance(self, type(other)) and self.label() == other.label()
+
+    def label(self):
+
+        return self._label
+
+
+class IDItem(LabelItem):
+
+    def __init__(self, label, uid):
+
+        super().__init__(label)
+        self._uid = uid
+
+    def __eq__(self, other):
+
+        return isinstance(self, type(other)) and self.id() == other.id()
+
+    def id(self):
+
+        return self._uid
+
+
+class Signature(IDItem):
 
     def __init__(self, data):
 
-        TreeItem.__init__(self)
         IDItem.__init__(self, data['@label'], data['@ID'])
 
         # Extract properties
@@ -117,6 +140,11 @@ class Signature(TreeItem, IDItem):
 
         return '<Sig> ' + self.label()
 
+    def atom(self, label):
+
+        atom = self.find(label)
+        return atom if isinstance(atom, Atom) else None
+
     def atoms(self):
 
         atoms = self._atoms[:]
@@ -124,16 +152,19 @@ class Signature(TreeItem, IDItem):
             atoms += sig.atoms()
         return atoms
 
+    def field(self, label):
+
+        field = self.find(label)
+        return field if isinstance(field, Field) else None
+
     def fields(self):
 
         return [child for child in self.children() if isinstance(child, Field)]
 
-    def find_atom(self, label):
+    def signature(self, label):
 
-        for atom in self.atoms():
-            if atom.label() == label:
-                return atom
-        return None
+        signature = self.find(label)
+        return signature if isinstance(signature, Signature) else None
 
     def signatures(self):
 
@@ -161,11 +192,10 @@ class Atom(LabelItem):
         return self._sig
 
 
-class Field(TreeItem, IDItem):
+class Field(IDItem):
 
     def __init__(self, data, sig_tree):
 
-        TreeItem.__init__(self)
         IDItem.__init__(self, data['@label'], data['@ID'])
 
         # Extract field types
@@ -181,7 +211,7 @@ class Field(TreeItem, IDItem):
             for tup in tuples:
                 labels = [atom['@label'] for atom in tup['atom']]
                 labels_and_types = zip(labels, self.types())
-                tup = tuple([sig.find_atom(label) for label, sig in labels_and_types])
+                tup = tuple([sig.atom(label) for label, sig in labels_and_types])
                 self._add_tuple(tup)
 
     def __repr__(self):
@@ -202,6 +232,13 @@ class Field(TreeItem, IDItem):
         self._tuples.append(tup)
 
 
+class Skolem(Field):
+
+    def __repr__(self):
+
+        return '<Skolem> ' + self.label() + ': ' + ' -> '.join([str(t) for t in self.types()])
+
+
 # Creates list of items that are in a but not in b
 def list_diff(a, b):
     return [item for item in a if item not in b]
@@ -213,7 +250,7 @@ def populate_signature_tree(signature, signature_list):
     remaining_list = list_diff(signature_list, child_list)
     for child in child_list:
         sig = Signature(child).parent(signature)
-        signature.add_child(sig)
+        # signature.add_child(sig)
         remaining_list = populate_signature_tree(sig, remaining_list)
     return remaining_list
 
@@ -252,7 +289,16 @@ class Universe:
         for field in fields:
             parent = self._univ.find_by_id(field['@parentID'])
             f = Field(field, self._univ).parent(parent)
-            parent.add_child(f)
+            # parent.add_child(f)
+
+        # Look for any skolem
+        if 'skolem' in self._instance:
+            skolem = self._instance['skolem']
+            if not isinstance(skolem, list):
+                skolem = [skolem]
+            for skol in skolem:
+                skol = Skolem(skol, self._univ).parent(self._univ)
+                # self._univ.add_child(skol)
 
     def command(self):
 
